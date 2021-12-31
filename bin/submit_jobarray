@@ -1,0 +1,18 @@
+
+#!/bin/bash
+
+
+echo "deleting and creating bin/job_array.list"
+rm -rf bin/job_array.list
+touch bin/job_array.list
+for filename in `ls /home/pdoviet/work/job_array`
+do
+	jobid="${filename##*.}"
+	file="/home/pdoviet/work/cls_output/output.$jobid"
+	if [ ! -f "$file" ]
+	then
+		echo "java -Xmx2042m -Djava.awt.headless=true -cp "target/BioStruct-0.0.9-SNAPSHOT.jar:lib/*" apps.ClusterJob $jobid" >> bin/job_array.list
+	fi
+done
+echo "submitting job"
+qarray -cwd -e /work/pdoviet/log/e.log -o /work/pdoviet/log/o.log  bin/job_array.list

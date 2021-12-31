@@ -1,0 +1,57 @@
+#DAVROS was run against a highly non-redundant PDB (old version from 2002).
+#After filtering (chains contain gaps, longer than 600 residues, and small than 25 residue),
+#this dataset contain 1530 chains. And each chain was assigned a score.]
+#Only 50 structures with highest score of DAVROS are taken consideration because outside the top 50 scores,
+#the number off false positives increases. These results indicate that the method works well for those proteins that
+#score highly, but structures with large indels the method increases a lot of false positives.
+#code	TRs	score	length  raphaelScore
+1jtd_B	1	2.024295121	273
+1tbg_A	1	1.346403396	340
+1b4b_A	1	1.154728347	71
+2bnh_A	1	0.959323698	456 23.155833
+1l0q_A	1	0.948308155	385 9.83967
+1amm_A	1	0.909472543	174
+1vmo_A	1	0.85658822	163
+1bff_A	1	0.818269366	129
+2cwg_A	1	0.747518509	178
+1lxa_A	1	0.706754379	262
+1rpr_A	0	0.63721416	63
+1ocr_E	1	0.607489446	109
+1fe4_A	1	0.541231719	68
+1hcd_A	1	0.502878514	118
+1b64_A	1	0.50084004	91
+1jb0_C	1	0.488033393	80
+3chy_A	1	0.487763104	128
+1bk5_A	1	0.479770747	422 9.0163046
+1adr_A	0	0.46103253	76
+2dri_A	1	0.460872158	271
+1fxk_B	0	0.453392699	105
+1k40_A	1	0.452504926	126
+1m2e_A	1	0.452292078	135
+2mhr_A	1	0.44795848	118
+1hcx_A	1	0.442328573	127 1.9383206
+1jof_C	1	0.440028155	355 4.9178982
+1d2o_A	1	0.43129232	187
+1rpx_A	1	0.422804991	230
+1prs_A	1	0.421537121	173
+1a7g_E	1	0.413041195	82
+1tf3_A	1	0.41028523	92
+2lef_A	0	0.408042684	86
+1thf_D	1	0.406366157	253
+1hp8_A	0	0.401633494	68
+1l3p_A	1	0.400425335	102
+1dpt_A	1	0.400077932	117
+1fq0_A	1	0.399306946	213 3.2351942
+1afj_A	1	0.390898855	72
+3msi_A	1	0.389270003	66
+1qfe_A	1	0.380285349	252 1.0605795
+1h9e_A	0	0.378099467	56
+1aoi_F	0	0.377699635	87
+1jyg_A	1	0.377585526	69
+1au1_A	1	0.376112934	166
+1fbr_A	1	0.369802376	93
+1lsl_A	1	0.36682159	113
+1bax_A	0	0.365354037	94
+1otg_A	1	0.360124989	125
+2psp_A	1	0.35760533	105
+1l9l_A	0	0.355875407	74

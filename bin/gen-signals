@@ -1,0 +1,3 @@
+#!/bin/bash 
+#gen-sinals [1BPO] [A]
+java -cp "target/classes;lib/*" org.crns.crbm.lib.cm.ContactSignals $1 $2

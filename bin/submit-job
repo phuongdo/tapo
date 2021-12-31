@@ -1,0 +1,7 @@
+#!/bin/bash 
+
+for i in {0..2}
+do
+    job=`qsub -S /bin/bash  job-analysis $i`
+    
+done

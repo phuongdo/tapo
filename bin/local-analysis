@@ -1,0 +1,6 @@
+echo "Runing jobid from $1 to $2" 
+for (( c=$1; c<=$2; c++ ))
+do
+   java -version:1.7 -cp "target/classes;lib/*" apps.ClusterJob $c 7	   
+
+done

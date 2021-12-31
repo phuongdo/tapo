@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<configuration status="warn">
+    <appenders>
+        <Console name="Console" target="SYSTEM_ERR">
+            <PatternLayout pattern="%d{HH:mm:ss} [%t] %-5level %logger{36} - %msg%n"/>
+        </Console>
+    </appenders>
+    <!--<appenders>-->
+        <!--<file name="MyFile" fileName="log/tapo-log.log">-->
+            <!--<PatternLayout pattern="%d{HH:mm:ss} [%t] %-5level %logger{36} - %msg%n"/>-->
+        <!--</file>-->
+    <!--</appenders>-->
+
+    <loggers>
+
+        <root level="error">
+            <appender-ref ref="Console"/>
+            <!--<appenderRef ref="MyFile"/>-->
+        </root>
+    </loggers>
+</configuration>

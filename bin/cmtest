@@ -1,0 +1,4 @@
+#!/bin/bash 
+java -cp "target/classes;lib/*" org.crns.crbm.lib.cm.ContactMapMain -p $1 -c $2 -cutoff $3
+# if you want to use special input file, use -i options
+#java -cp "target/classes;lib/*" org.crns.crbm.lib.cm.ContactMapMain -i $1 -c $2 -cutoff $3

@@ -1,0 +1,11 @@
+#Getting Cygwin and Java to play together
+case "`uname`" in
+  CYGWIN*) cygwin=true ;;
+ 
+esac
+ 
+# For Cygwin, switch paths to Windows format before running java
+if $cygwin; then
+  JAVA_HOME=`cygpath --windows "$JAVA_HOME"`
+  CLASSPATH=`cygpath --windows --path "$CLASSPATH"`
+fi

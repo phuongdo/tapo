@@ -1,0 +1,2 @@
+#!/bin/bash 
+java  -Xmx512m -Djava.awt.headless=true -cp "target/classes;lib/*" org.crns.crbm.lib.applications.ClusterJob $1 > /home/pdoviet/work/output/output.$1

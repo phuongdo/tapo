@@ -1,0 +1,371 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project xmlns="http://maven.apache.org/POM/4.0.0"
+         xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+         xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
+    <modelVersion>4.0.0</modelVersion>
+
+    <groupId>tapo</groupId>
+    <artifactId>tapo</artifactId>
+    <packaging>pom</packaging>
+    <version>1.1.2-dev</version>
+    <modules>
+        <module>tapo-core</module>
+        <module>tapo-classification</module>
+        <module>tapo-ws</module>
+        <module>tapo-apps</module>
+
+
+    </modules>
+
+    <properties>
+        <main.basedir>${project.basedir}</main.basedir>
+        <jettyVersion>7.2.0.v20101020</jettyVersion>
+        <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
+        <build.dist>${project.basedir}/dependencies-dev</build.dist>
+        <src.dir>src/main/java</src.dir>
+        <biojava.version>4.1.1-SNAPSHOT</biojava.version>
+        <slf4j.version>1.7.12</slf4j.version>
+        <log4j.version>2.3</log4j.version>
+    </properties>
+
+
+    <dependencies>
+        <dependency>
+            <groupId>org.biojava</groupId>
+            <artifactId>biojava-core</artifactId>
+            <version>${biojava.version}</version>
+        </dependency>
+        <!-- other biojava jars as needed -->
+        <dependency>
+            <groupId>org.biojava</groupId>
+            <artifactId>biojava-alignment</artifactId>
+            <version>${biojava.version}</version>
+        </dependency>
+
+        <dependency>
+            <groupId>org.biojava</groupId>
+            <artifactId>biojava-structure</artifactId>
+            <version>${biojava.version}</version>
+        </dependency>
+        <dependency>
+            <groupId>org.biojava</groupId>
+            <artifactId>biojava-structure-gui</artifactId>
+            <version>${biojava.version}</version>
+        </dependency>
+        <dependency>
+            <groupId>org.biojava</groupId>
+            <artifactId>biojava-ws</artifactId>
+            <version>${biojava.version}</version>
+        </dependency>
+
+        <dependency>
+            <groupId>commons-cli</groupId>
+            <artifactId>commons-cli</artifactId>
+            <version>1.2</version>
+        </dependency>
+        <dependency>
+            <groupId>org.apache.commons</groupId>
+            <artifactId>commons-math3</artifactId>
+            <version>3.3</version>
+        </dependency>
+        <dependency>
+            <groupId>org.apache.commons</groupId>
+            <artifactId>commons-lang3</artifactId>
+            <version>3.3</version>
+        </dependency>
+
+        <dependency>
+            <groupId>org.eclipse.jetty</groupId>
+            <artifactId>jetty-server</artifactId>
+            <version>${jettyVersion}</version>
+        </dependency>
+        <dependency>
+            <groupId>com.github.wendykierp</groupId>
+            <artifactId>JTransforms</artifactId>
+            <version>3.0</version>
+        </dependency>
+        <!--<dependency>-->
+        <!--<groupId>org.crns.crbm</groupId>-->
+        <!--<artifactId>t-recks</artifactId>-->
+        <!--<version>1.0</version>-->
+        <!--<scope>system</scope>-->
+        <!--<systemPath>${project.basedir}/lib/T-Reks.jar</systemPath>-->
+        <!--</dependency>-->
+        <!--<dependency>-->
+        <!--<groupId>bsh.core</groupId>-->
+        <!--<artifactId>bsh-core</artifactId>-->
+        <!--<version>2.0</version>-->
+        <!--<scope>system</scope>-->
+        <!--<systemPath>${project.basedir}/lib/bsh-core-2.0.jar</systemPath>-->
+        <!--</dependency>-->
+        <!--<dependency>-->
+        <!--<groupId>rcaller</groupId>-->
+        <!--<artifactId>RCaller</artifactId>-->
+        <!--<version>1.0</version>-->
+        <!--<scope>system</scope>-->
+        <!--<systemPath>${project.basedir}/lib/RCaller.jar</systemPath>-->
+        <!--</dependency>-->
+        <!--<dependency>-->
+        <!--<groupId>org.crns.crbm</groupId>-->
+        <!--<artifactId>trust</artifactId>-->
+        <!--<version>1.0</version>-->
+        <!--<scope>system</scope>-->
+        <!--<systemPath>${project.basedir}/lib/trust-lib.jar</systemPath>-->
+        <!--</dependency>-->
+
+        <!--<dependency>-->
+        <!--<groupId>com.apporiented</groupId>-->
+        <!--<artifactId>hierarchical-clustering</artifactId>-->
+        <!--<version>1.0</version>-->
+        <!--<scope>system</scope>-->
+        <!--<systemPath>${project.basedir}/lib/hierarchical-clustering-1.0.jar</systemPath>-->
+        <!--</dependency>-->
+
+
+        <!--<dependency>-->
+        <!--<groupId>org.forester</groupId>-->
+        <!--<artifactId>forester</artifactId>-->
+        <!--<version>1.0</version>-->
+        <!--<scope>system</scope>-->
+        <!--<systemPath>${project.basedir}/lib/forester-1.0.jar</systemPath>-->
+        <!--</dependency>-->
+
+        <dependency>
+            <groupId>org.biojava.thirdparty</groupId>
+            <artifactId>forester</artifactId>
+            <version>1.005</version>
+        </dependency>
+
+        <!--<dependency>-->
+        <!--<groupId>gui.ava</groupId>-->
+        <!--<artifactId>WebVector</artifactId>-->
+        <!--<version>3.3</version>-->
+        <!--<scope>system</scope>-->
+        <!--<systemPath>${project.basedir}/lib/WebVector-3.3.jar</systemPath>-->
+        <!--<exclusions>-->
+        <!--<exclusion>-->
+        <!--<groupId>org.slf4j</groupId>-->
+        <!--<artifactId>slf4j-log4j12</artifactId>-->
+        <!--</exclusion>-->
+        <!--</exclusions>-->
+        <!--</dependency>-->
+
+        <dependency>
+            <groupId>net.sf.opencsv</groupId>
+            <artifactId>opencsv</artifactId>
+            <version>2.3</version>
+        </dependency>
+        <!--<dependency>-->
+        <!--<groupId>org.fusesource.jansi</groupId>-->
+        <!--<artifactId>jansi</artifactId>-->
+        <!--<version>1.7</version>-->
+        <!--<scope>provided</scope>-->
+        <!--</dependency>-->
+        <dependency>
+            <groupId>org.fusesource.jansi</groupId>
+            <artifactId>jansi</artifactId>
+            <version>1.11</version>
+        </dependency>
+
+        <dependency>
+            <groupId>mysql</groupId>
+            <artifactId>mysql-connector-java</artifactId>
+            <version>5.1.31</version>
+        </dependency>
+
+
+        <dependency>
+            <groupId>org.sonatype.jline</groupId>
+            <artifactId>jline</artifactId>
+            <version>2.5</version>
+        </dependency>
+        <dependency>
+            <groupId>commons-io</groupId>
+            <artifactId>commons-io</artifactId>
+            <version>2.4</version>
+        </dependency>
+        <dependency>
+            <groupId>com.google.guava</groupId>
+            <artifactId>guava</artifactId>
+            <version>18.0-rc1</version>
+        </dependency>
+        <dependency>
+            <!-- jsoup HTML parser library @ http://jsoup.org/ -->
+            <groupId>org.jsoup</groupId>
+            <artifactId>jsoup</artifactId>
+            <version>1.8.1</version>
+        </dependency>
+        <dependency>
+            <groupId>org.apache.commons</groupId>
+            <artifactId>commons-exec</artifactId>
+            <version>1.3</version>
+        </dependency>
+
+        <dependency>
+            <groupId>org.slf4j</groupId>
+            <artifactId>jcl-over-slf4j</artifactId>
+            <version>1.7.5</version>
+        </dependency>
+        <!--Redirect Java Util Logging to Slf4J -->
+        <dependency>
+            <groupId>org.slf4j</groupId>
+            <artifactId>slf4j-api</artifactId>
+            <version>${slf4j.version}</version>
+        </dependency>
+        <!-- binding for log4j 2 -->
+        <dependency>
+            <groupId>org.apache.logging.log4j</groupId>
+            <artifactId>log4j-slf4j-impl</artifactId>
+            <version>${log4j.version}</version>
+            <!-- runtime scope includes the test scope as well -->
+            <!--<scope>runtime</scope>-->
+        </dependency>
+        <!-- Log4j API and Core implementation required for binding -->
+        <dependency>
+            <groupId>org.apache.logging.log4j</groupId>
+            <artifactId>log4j-api</artifactId>
+            <version>${log4j.version}</version>
+            <!-- runtime scope includes the test scope as well -->
+            <scope>runtime</scope>
+        </dependency>
+        <dependency>
+            <groupId>org.apache.logging.log4j</groupId>
+            <artifactId>log4j-core</artifactId>
+            <version>${log4j.version}</version>
+            <!-- runtime scope includes the test scope as well -->
+            <!--<scope>runtime</scope>-->
+
+        </dependency>
+
+    </dependencies>
+
+    <repositories>
+
+        <repository>
+            <id>maven-restlet</id>
+            <name>Public online Restlet repository</name>
+            <url>http://maven.restlet.org</url>
+        </repository>
+        <repository>
+            <id>central</id>
+            <name>Maven Repository Switchboard</name>
+            <layout>default</layout>
+            <url>http://repo1.maven.org/maven2</url>
+            <snapshots>
+                <enabled>false</enabled>
+            </snapshots>
+        </repository>
+        <repository>
+            <id>maven2-repository.dev.java.net</id>
+            <name>Java.net Maven 2 Repository</name>
+            <url>http://download.java.net/maven/2</url>
+        </repository>
+        <repository>
+            <id>maven-repository.dev.java.net</id>
+            <name>Java.net Maven 1 Repository (legacy)</name>
+            <url>http://download.java.net/maven/1</url>
+        </repository>
+
+        <repository>
+            <id>biojava-maven-repo</id>
+            <name>BioJava repository</name>
+            <url>http://www.biojava.org/download/maven/</url>
+            <snapshots>
+                <enabled>true</enabled>
+            </snapshots>
+            <releases>
+                <enabled>true</enabled>
+            </releases>
+        </repository>
+        <repository>
+            <id>oss.sonatype.org-snapshot</id>
+            <url>http://oss.sonatype.org/content/repositories/snapshots</url>
+            <releases>
+                <enabled>false</enabled>
+            </releases>
+            <snapshots>
+                <enabled>true</enabled>
+            </snapshots>
+        </repository>
+
+
+    </repositories>
+
+    <!-- where Maven deploy will deploy project jars/wars -->
+    <!--<distributionManagement>-->
+    <!--<downloadUrl>http://www.biojava.org/download/maven/</downloadUrl>-->
+    <!--<repository>-->
+    <!--<uniqueVersion>false</uniqueVersion>-->
+    <!--<id>biojava-maven-repo</id>-->
+    <!--<name>BioJava Maven Repository</name>-->
+    <!--<url>scp://cloudportal.open-bio.org/home/websites/biojava.org/html/static/download/maven/</url>-->
+    <!--<layout>default</layout>-->
+    <!--</repository>-->
+    <!--<snapshotRepository>-->
+    <!--<uniqueVersion>false</uniqueVersion>-->
+    <!--<id>biojava-maven-repo</id>-->
+    <!--<name>BioJava Maven Repository</name>-->
+    <!--<url>scp://cloudportal.open-bio.org/home/websites/biojava.org/html/static/download/maven/</url>-->
+    <!--<layout>default</layout>-->
+    <!--</snapshotRepository>-->
+    <!--</distributionManagement>-->
+
+
+    <build>
+        <!--<sourceDirectory>${src.dir}</sourceDirectory>-->
+        <!--<plugins>-->
+        <!--<plugin>-->
+        <!--<groupId>org.apache.maven.plugins</groupId>-->
+        <!--<artifactId>maven-dependency-plugin</artifactId>-->
+        <!--<version>2.4</version>-->
+        <!--<executions>-->
+        <!--<execution>-->
+        <!--<id>copy-dependencies</id>-->
+        <!--<phase>package</phase>-->
+        <!--<goals>-->
+        <!--<goal>copy-dependencies</goal>-->
+        <!--</goals>-->
+        <!--<configuration>-->
+        <!--<outputDirectory>${build.dist}</outputDirectory>-->
+        <!--<overWriteReleases>true</overWriteReleases>-->
+        <!--<overWriteSnapshots>true</overWriteSnapshots>-->
+        <!--<overWriteIfNewer>true</overWriteIfNewer>-->
+        <!--</configuration>-->
+
+        <!--</execution>-->
+        <!--</executions>-->
+        <!--</plugin>-->
+        <!--</plugins>-->
+        <!--<pluginManagement>-->
+        <!--<plugins>-->
+        <!--<plugin>-->
+        <!--<groupId>org.eclipse.m2e</groupId>-->
+        <!--<artifactId>lifecycle-mapping</artifactId>-->
+        <!--<version>1.0.0</version>-->
+        <!--<configuration>-->
+        <!--<lifecycleMappingMetadata>-->
+        <!--<pluginExecutions>-->
+        <!--<pluginExecution>-->
+        <!--<pluginExecutionFilter>-->
+        <!--<groupId>org.apache.maven.plugins</groupId>-->
+        <!--<artifactId>maven-dependency-plugin</artifactId>-->
+        <!--<versionRange>[1.0.0,)</versionRange>-->
+        <!--<goals>-->
+        <!--<goal>copy-dependencies</goal>-->
+        <!--<goal>compile</goal>-->
+        <!--</goals>-->
+        <!--</pluginExecutionFilter>-->
+        <!--<action>-->
+        <!--<ignore/>-->
+        <!--</action>-->
+        <!--</pluginExecution>-->
+        <!--</pluginExecutions>-->
+        <!--</lifecycleMappingMetadata>-->
+        <!--</configuration>-->
+        <!--</plugin>-->
+        <!--</plugins>-->
+        <!--</pluginManagement>-->
+    </build>
+
+
+</project>

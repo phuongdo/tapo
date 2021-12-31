@@ -1,0 +1,477 @@
+#This file now contains the extended list of heterogens from my manual
+#search through - note this was not necessarily foolproof and have also
+#tried to remain cautious when adding ligands i.e. if unsure have often left
+#them out - this generally happened for ligands present only in a single or few
+#structures
+
+#NOTE HAG has now been commented out - in predictions where it has been used it 
+#doesnt seem to be relevant, do this also need to be done for other sugars??
+
+#nucleotides
+ATP=NP_BIND=ATP=ATP=ADENOSINE-5'-TRIPHOSPHATE=
+ADP=NP_BIND=ADP=ADP=ADENOSINE-5'-DIPHOSPHATE=
+ADX=NP_BIND=ADP analog=5'-adenylyl sulfate=ADENOSINE-5'-PHOSPHOSULFATE=
+AMP=NP_BIND=AMP=adenosine 5'-monophosphate=ADENOSINE MONOPHOSPHATE=
+
+CTP=NP_BIND=CTP=CTP=CYTIDINE-5'-TRIPHOSPHATE=
+CDP=NP_BIND=CDP=Cytidine-5'-diphosphate
+CMP=NP_BIND=cAMP=not assigned="Adenosine-3',5'-cyclic-monophosphate"=
+523=NP_BIND=5-methyl dCTP
+
+FMN=NP_BIND=FMN=FMN=FLAVIN MONONUCLEOTIDE=
+FAD=NP_BIND=FAD=FAD=FLAVIN-ADENINE DINUCLEOTIDE=
+SFD=NP_BIND=FAD Cofactor analog=not assigned="(s)-10-((2s,3s,4r)-5-((s)-((s)-(((2r,3s,4r,5r)-5-(6-amino-9h-purin-9-yl)-3,4-dihydroxy-tetrahydrofuran-2-yl)methoxy)(hydroxy)phosphoryloxy)(hydroxy)phosphoryloxy)-2,3,4-trihydroxypentyl)-7,8-dimethyl-2,4-dioxo-2,3,4,4a-tetrahydrobenzo[g]pteridine-5(10h)-sulfonic acid"=
+
+NAD=NP_BIND=NAD=NAD zwitterion=NICOTINAMIDE-ADENINE-DINUCLEOTIDE=
+NAP=NP_BIND=NADP=NADP zwitterion=NADP NICOTINAMIDE-ADENINE-DINUCLEOTIDE PHOSPHATE=
+NDP=NP_BIND=NADP=NADPH=NADPH DIHYDRO-NICOTINAMIDE-ADENINE-DINUCLEOTIDE PHOSPHATE=
+NCN=NP_BIND=Nicotinate mononucleotide=not assigned=Nicotinate mononucleotide=
+NAJ=NP_BIND=NAD=not assigned=Nicotinamide-adenine-dinucleotide (acidic form)=
+NBP=NP_BIND=NAD=not assigned=nicotinamide 8-bromo-adenine dinucleotide phosphate=
+NBD=NP_BIND=NAD=not assigned=N6-benzyl-nicotinamide-adenine-dinucleotide=
+NAX=NP_BIND=NAD=not assigned=Beta-6-hydroxy-1,4,5,6-tetrhydronicotinamide adenine dinucleotide=
+NAQ=NP_BIND=NAD=not assigned=Nicotinamide adenine dinucleotide 3-pentanone adduct=
+NAI=NP_BIND=NAD=NADH=1,4-DIHYDRONICOTINAMIDE ADENINE DINUCLEOTIDE=
+
+SAH=NP_BIND=S-adenosyl-L-homocysteine=S-adenosyl-L-homocysteine=S-ADENOSYL-L-HOMOCYSTEINE=
+SAM=NP_BIND=S-adenosyl-L-methionine=(S)-S-adenosyl-L-methionine=S-ADENOSYLMETHIONINE=
+GTP=NP_BIND=GTP=GTP=GUANOSINE-5'-TRIPHOSPHATE=
+
+#non-Standard amino acids
+//=CSE=NON_STD=Selenocysteine=L-selenocysteine=SELENOCYSTEINE=Probably an oxidised form of selenocysteine due to sample preperation 
+SEC=NON_STD=Selenocysteine=not assigned=2-amino-3-selenino-propionic acid=
+BGX=NON_STD=Pyrrolysine=not assigned=4-methyl-pyrroline-5-carboxylic acid=
+X7O=NON_STD=Pyrrolysine=(3R,5R)-5-amino-3-methyl-D-proline=5-AMINO-3-METHYL-PYRROLIDINE-2-CARBOXYLIC ACID=
+
+#modified residues
+#ACE=MOD_RES=N-actyl X=acetyl group=ACETYL GROUP=
+#NH2=MOD_RES=Amino group=amino group=AMINO GROUP=
+#SEP=MOD_RES=Phosphoserine=O-phospho-L-serine residue=PHOSPHOSERINE=
+#CSO=MOD_RES=Cysteine sulfenic acid (-SOH)=not assigned==
+#PTR=MOD_RES=Phosphotyrosine=not assigned==
+#PCA=MOD_RES=Pyrrolidone carboxylic acid=5-oxo-L-proline residue=PYROGLUTAMIC ACID=
+#TPO=MOD_RES=Phosphothreonine=not assigned=Phosphothreonine
+#MLY=MOD_RES=N6,N6-dimethyllysine=not assigned=N-dimethyl-lysine=
+#CSD=MOD_RES=Cysteine sulfinic acid (-SO2H)=3-sulfino-L-alanine=3-SULFINOALANINE=
+#KCX=MOD_RES=N6-carboxylysine=not assigned==
+#GLY=MOD_RES=Glycine radical=not assigned==
+#HYP=MOD_RES=4-hydroxyproline=not assigned==
+#CSW=MOD_RES=Cysteine sulfinic acid (-SO2H)=not assigned=Cysteine-s-dioxide=
+#ASP=MOD_RES=Deamidated asparagine=not assigned==
+#CSS=MOD_RES=Cysteine persulfide=not assigned==
+#CGU=MOD_RES=4-carboxyglutamate=not assigned==
+#CSX=MOD_RES=Cysteine sulfenic acid (-SOH)=not assigned=S-oxy cysteine=
+#FME=MOD_RES=N-formylmethionine=not assigned=N-formylmethionine=
+#ALY=MOD_RES=N6-acetyllysine=N(6)-acetyl-L-lysine=N(6)-ACETYLLYSINE=
+#PHS=MOD_RES=Phosphono group=phosphono group=Phosphonic acid=
+#M3L=MOD_RES=N6,N6,N6-trimethyllysine="N(6),N(6),N(6)-trimethyl-L-lysine"=N-TRIMETHYLLYSINE=
+#MLZ=MOD_RES=N6-methyllysine=not assigned=N-methyl-lysine=
+#MEN=MOD_RES=N4-methylasparagine=not assigned=N-methyl asparagine=
+#LCX=MOD_RES=N6-carboxylysine=not assigned=Carboxylated lysine=
+#HIC=MOD_RES=Tele-methylhistidine=not assigned=4-methyl-histidine=
+#CXM=MOD_RES=Blocked amino end (Met)=not assigned==
+#NFA=MOD_RES=Phenylalanine amide=not assigned=Phenylalanine amide=
+#MHS=MOD_RES=Pros-methylhistidine=not assigned=N1-methylated histidine=
+#MAA=MOD_RES=N-methylalanine=not assigned=N-methylalanine=
+#CSP=MOD_RES=Phosphocysteine=not assigned=S-phosphocysteine=
+#AYA=MOD_RES=N-acetylalanine=not assigned=N-acetylalanine=
+#DSG=MOD_RES=D-asparagine=not assigned=D-asparagine=
+#AAR=MOD_RES=Arginine amide=not assigned=Arginineamide=
+#2MR=MOD_RES=Symmetric dimethylarginine=not assigned="N3, n4-dimethylarginine"=
+#LYZ=MOD_RES=5-hydroxylysine=not assigned=5-hydroxylysine=
+#DA2=MOD_RES=Asymmetric dimethylarginine="N(G),N(G)-dimethyl-L-arginine"="NG,NG-DIMETHYL-L-ARGININE"=
+#CMT=MOD_RES=Cysteine methyl ester)=not assigned=O-methylcysteine=
+#BTR=MOD_RES=6'-bromotryptophan=not assigned=6-bromo-tryptophan=
+#MEQ=MOD_RES=N5-methylglutamine=N(5)-methyl-L-glutamine=N5-METHYLGLUTAMINE=
+#DIL=MOD_RES=D-allo-isoleucine=D-isoleucine=D-ISOLEUCINE=
+#DDE=MOD_RES=Diphthamide=diphthamide residue={3-[4-(2-AMINO-2-CARBOXY-ETHYL)-1H-IMIDAZOL-2-YL]-1-CARBAMOYL-PROPYL}-TRIMETHYL-AMMONIUM=
+#AAG=MOD_RES=N2-acetylarginine=not assigned=N-alpha-l-acetyl-arginine=
+#AAC=MOD_RES=N-acetylglycine=not assigned=Acetylamino-acetic acid
+#TPQ=MOD_RES=2',4',5'-topaquinone
+#MME=MOD_RES=N-methylmethionine
+#MEA=MOD_RES=N-methylphenylalanine
+
+#Metals - I added Iron and their sulphur derivatives as these are not usually found in buffers
+ZN=METAL=Zinc=zinc(2+)=ZINC ION=
+MG=METAL=Magnesium=magnesium(2+)=MAGNESIUM ION=
+CA=METAL=Calcium=calcium(2+)=CALCIUM ION=
+#NA=METAL=Sodium=sodium(1+)=SODIUM ION=
+#MN=METAL=Manganese=manganese(2+)=MANGANESE (II) ION=
+#K=METAL=Potassium=potassium(1+)=POTASSIUM ION=
+#CD=METAL=Cadmium=cadmium(2+)=CADMIUM ION=
+FE=METAL=Iron=iron(3+)=FE (III) ION=
+NI=METAL=Nickel=nickel(2+)=NICKEL (II) ION=
+CU=METAL=Copper=copper(2+)=COPPER (II) ION=
+#CO=METAL=Cobalt=cobalt(2+)=COBALT (II) ION=
+FES=METAL=Iron-sulfur (2Fe-2S)=di-mu-sulfido-diiron=FE2/S2 (INORGANIC) CLUSTER=
+FE2=METAL=Iron=iron(2+)=FE (II) ION=
+#Hmm SAM  - why is this in here as a metal - it is really a nucleoside
+#SAM=METAL=Iron-sulfur (4Fe-4S-S-AdoMet)=(S)-S-adenosyl-L-methionine=S-ADENOSYLMETHIONINE=
+F3S=METAL=Iron-sulfur (3Fe-4S)=not assigned=Fe3-s4 cluster=
+MO=METAL=Molybdenum=not assigned=Molybdenum atom=
+#C2O=METAL=Copper 1/Copper 2; Cu-O-Cu linkage=not assigned=Cu-o-cu linkage=
+#W=METAl=Tungsten=tungsten(6+)=TUNGSTEN ION
+#MO6=METAL=Magnesium=hexaaquamagnesium(2+)=MAGNESIUM ION, 6 WATERS COORDINATED=
+#FEL=METAL=Iron=not assigned=Hydrated fe=
+#OC1=METAL=Calcium; 1 coordinated water=not assigned    Calcium ion, 1 water coordinated=
+FS4=METAL=Iron-sulfur (4Fe-4S)=tetra-mu3-sulfido-tetrairon=IRON/SULFUR CLUSTER
+SF4=METAL=Iron-sulfur (4Fe-4S)
+COB=METAL=Cobalt (cobalamin axial ligand)
+CUA=METAL=Copper A
+CUZ=METAL=Copper Z
+
+#Carbohydrates
+# Non-covalently linked sugars should use the BINDING key - Mannose can be O-linked
+#NAG=CARBOHYD=N-acetyl-D-glucosamine=not assigned=N-acetyl-d-glucosamine=
+GLC=CARBOHYD=Glucose=alpha-D-glucose=GLUCOSE=
+MAN=CARBOHYD=Mannose=alpha-D-mannose=ALPHA-D-MANNOSE=
+GAL=CARBOHYD=Galactose=not assigned=Beta-d-galactose=
+FUC=CARBOHYD=Fucose=alpha-L-fucose=ALPHA-L-FUCOSE=
+BMA=CARBOHYD=Beta-D-mannose=beta-D-mannose=BETA-D-MANNOSE=
+SUC=CARBOHYD=Sucrose=sucrose=SUCROSE=
+NGA=CARBOHYD=N-acetyl-D-galactosamine=not assigned=N-acetyl-d-galactosamine=
+FRU=CARBOHYD=Fructose=beta-D-fructofuranose=FRUCTOSE=
+F6P=CARBOHYD=Fructose-6-phosphate=beta-D-fructofuranose 6-phosphate=FRUCTOSE-6-PHOSPHATE=
+G6P=CARBOHYD=Glucose-6-phosphate=alpha-D-glucose 6-phosphate=ALPHA-D-GLUCOSE-6-PHOSPHATE=
+G1P=CARBOHYD=Glucose-1-phosphate=not assigned=Alpha-d-glucose-1-phosphate=
+ARA=CARBOHYD=Arabinose=alpha-L-arabinopyranose=ALPHA-L-ARABINOSE
+
+LGC=BINDING=D-glucono-1,5-lactone
+
+#tetrapyrroles
+CYC=BINDING=Phycocyanobilin chromophore
+PEB=BINDING=Phycoerythrobilin chromophore
+PVN=BINDING=Phycoviolobilin chromophore
+PUB=BINDING=Phycourobilin chromophore
+#HDD=BINDING=
+
+#Porphyrins
+PP9=BINDING=Protoporphyrin=	 CHEBI:15430
+HEA=BINDING=Heme a
+HEB=BINDING=Heme b
+HEM=BINDING=Heme
+HEC=BINDING=Heme c
+#HDD
+#BPH
+BCL=BINDING=Bacteriochlorophyll a
+F43=BINDING=Coenzyme F430
+B12=BINDING=Cobalamin
+# Magnesium (axial ligand)
+CHL=BINDING=Chlorophyll b
+CLA=BINDING=Chlorophyll a
+
+# Drugs - need to get more from ChEBI
+RAP=BINDING=Rapamycin
+KAN=BINDING=Kanamycin
+TAC=BINDING=Tetracycline
+TOL=BINDING=Tolrestat
+STU=BINDING=Staurosporine
+CLM=BINDING=Chloramphenicol
+TYL=BINDING=Paracetamol
+HCI=BINDING=3-phenylpropanoic acid
+AZA=BINDING=8-azaxanthine
+37T=BINDING=Theobromine
+AMH=BINDING=Tranexamic acid
+IXX=BINDING=Imipramine
+COB=BINDING=Cocaine
+CFF=BINDING=Caffeine
+NCT=BINDING=Nicotine
+ZD6=BINDING=Vandetanib
+MTX=BINDING=Methotrexate
+TOP=BINDING=Trimethoprim
+CFX=BINDING=Cefoxitin
+FMM=BINDING=Lapatinib=CHEBI:49603
+VIA=BINDING=Sildenafil=DB00203
+
+#bound cofactors - check in SP for annotation policy
+TPP=BINDING=Thiamine pyrophosphate
+THY=BINDING=Thiamine pyrophosphate
+THW=BINDING=Thiamine pyrophosphate
+THV=BINDING=Thiamine pyrophosphate
+PLP=MOD_RES=Pyridoxal phosphate
+#MLC=BINDING=Malonyl-coenzyme a
+
+# awaiting response from John on these guys as there are a few
+MTE=BINDING=Molybdopterin  
+PTE=BINDING=Tungstopterin=bis(molybdopterin)tungsten cofactor
+
+COA=BINDING=Coenzyme A=CHEBI:15346
+TP7=BINDING=Coenzyme B
+COM=BINDING=Coenzyme M
+
+#steroids
+CHD=BINDING=Cholate
+EST=BINDING=Estradiol
+TES=BINDING=Testosterone
+DHT=BINDING=Dihydrotestosterone
+STR=BINDING=Progesterone
+ALE=BINDING=Adrenaline
+AS4=BINDING=Aldosterone
+
+#special tests/requests
+//NGR=CARBOHYD=Nigerose
+
+#Cytokinin
+ZEA=BINDING=Cis-zeatin
+
+GTX=BINDING=S-hexylglutathione
+
+#EXtra ligands from search of PDB
+NBN=	YES
+BCS=	YES
+PG9=	YES
+IPM=	YES
+GTS=	YES
+CNA=	YES
+GSP=	YES
+GMY=	YES
+TAD=	YES
+TIA=	YES	??
+U=	YES
+MBG=	YES
+AP5=	YES	check
+AEB=	YES
+A3P=	YES
+SAP=	YES
+XYP=	YES
+A2G=	YES
+UFP=	YES
+C2F=	YES
+CYN=	YES
+GPS=	YES
+4IP=	YES
+PGH=	YES	It is an inhibitor
+DCM=	YES
+FYA=	YES	
+PCG=	YES
+2GP=	YES
+CTC=	YES	Chloro tetracycline
+ACO=	YES
+I3P=	YES
+T6P=	YES
+UDP=	YES
+PDC=	YES
+5GP=	YES
+E3G=	YES	steroid hormone
+EQU=	YES	a horse steroid
+TTP=	YES	Thymidine 5 Triphosphate
+E64=	YES	guanidine derivative
+BLG=	YES
+GDP=	YES
+ANP=	YES
+NH3=	YES	
+RIP=	YES	ribose
+DGP=	YES	Guanosine derivative
+BTN=	YES	biotin
+GLA=	YES	Alpha D Galactose
+OLA=	YES	NO? oleic acid
+AP2=	YES	
+ABM=	YES	adenosine derivative
+BMP=	YES	uridine derivative
+DUD=	YES	uridine derivative
+PSQ=	YES	??
+UP6=	YES	uridine derivative
+TPE=	YES	??
+ATY=	YES 	??
+NH4=	YES
+APS=	YES	adenine analogue ??
+ARP=	YES	adenine analogue ??
+GCS=	YES	D-Glucosamine
+GSH=	YES
+PRF=	YES	guanine derivative
+BMQ=	YES
+M7G=	YES	guanine derivative
+INJ=	YES	??
+DHB=	YES
+DCS=	YES	inhibitor
+R99=	YES	??
+NAR=	YES	flavonoid
+CAA=	YES	acetyl-coenzyme A
+DHY=	YES	
+PUT=	YES	putrescine
+DAN=	YES	
+OSB=	YES
+ADD=	YES
+UD1=	YES	UDP deriv
+GDU=	YES	galactose UDP
+GU7=	YES	??
+A5P=	YES
+IPD=	YES
+EPH=	YES
+TMP=	YES
+FQP=	YES
+U5P=	YES	UMP
+CIT=	YES
+GYP=	YES
+3GP=	YES	GMP
+ACP=	YES	But a little unsure
+RIB=	YES	ribose
+ZK5=	YES
+DPM=	YES	DIPYRROMETHANE COFACTOR
+CO3=	YES	carbonate ion 0 unsure.....
+LXC=	YES	L-XYLOSE
+IOD=	YES	IODINE- UNSURE
+ZTW=	YES	RALOXIFENE CORE
+AHR=	YES	ALPHA- L- ARABINOFURANOSE
+MGL=	YES	methyl glucose
+SGC=	YES	unsure - seems to be an INHIB
+BGC=	YES	beta - D -glucose
+FA1=	YES	anhydro quinic acid
+DCB=	YES
+BOG=	YES	unsure??
+RET=	YES	retinal	
+C5P=	YES
+XYS=	YES
+TYD=	YES	thymidine 5 diphosphate
+CMO=	YES
+OXY=	YES	unsure??
+GTT=	YES
+OXM=	YES
+16G=	YES
+IBS=	YES
+2IP=	YES
+OXN=	YES	a little unsure
+NMN=	YES
+CIL=	YES	unsure - only 1
+G3P=	YES
+FMP=	YES	is substrate analog
+TLA=	YES	unsure
+6PG=	YES
+137=	YES	ribulose-5phosphate unsure??	
+CPR=	YES
+UVC=	YES
+GNP=	YES
+THU=	YES
+AI2=	YES
+BCA=	YES
+NOV=	YES
+LG6=	YES
+UGA=	YES	uridine 5 diphosphate gluronic acid
+CBN=	YES	inhibitor
+RBZ=	YES
+33P=	YES	 but is reaction intermediate? UNSURE
+R36=	YES	unsure INHIB
+ESM=	YES	inhib or analog??
+UPG=	YES
+URI=	YES
+4CO=	YES
+SIN=	YES
+BUL=	YES	unsure  	
+SPV=	YES
+TOY=	YES
+PAP=	YES
+BN1=	YES
+DQO=	YES	inhibitor
+GLP=	YES
+TDG=	YES
+C2G=	YES
+PAJ=	YES
+PFA=	YES
+SRT=	YES
+PH2=	YES	antibiotic analog
+MTH=	YES
+EIP=	YES
+ATG=	YES
+KEU=	YES
+CRB=	YES
+AKG=	YES
+DAU=	YES	glucose deriv
+G16=	YES	glucose deriv
+OXL=	YES	oxaloate!!! REALLY UNSURE!!!
+SNG=	YES
+PIB=	YES
+PNS=	YES
+ADN=	YES	adenosine
+FUL=	YES
+BO3=	YES
+TDP=	YES
+UD2=	YES
+PQQ=	YES
+ROL=	YES	unsure inhib
+2HP=	YES	unsure
+5RP=	YES
+DXP=	YES
+GBP=	YES	inhib? 
+MEV=	YES
+MUA=	YES
+F42=	YES	coenzyme F420
+ETF=	YES	trifluorethanol
+AHZ=	YES	ADP deriv
+5AS=	YES
+3D1=	YES	2 deoxy adenosine
+RIO=	YES	 antibiotics
+DES=	YES
+NGV=	YES
+CZH=	YES
+THP=	YES	thymidine deriv
+GTG=	YES	GTP deriv
+LAT=	YES	beta lactose
+SPH=	YES	unsure 
+PCW=	YES
+B3N=	YES	unsure
+5UD=	YES	fluoruridine
+SSA=	YES
+DEG=	YES
+MLI=	YES
+PCT=	YES	inhib??
+APR=	YES	adenosine deriv
+PA5=	YES	compet inhib
+C5G=	YES
+IHS=	YES
+PMP=	YES
+HEY=	YES
+5FA=	YES	adenosine deriv
+GPX=	YES	GDP deriv
+DDN=	YES	UMP deriv
+DUX=	YES	uridine deriv
+C=	YES
+ICT=	YES
+FBP=	YES
+RIG=	YES
+TSB=	YES
+STA=	YES
+BT5=	YES	biotinyl 5 AMP - unsure??
+8GT=	YES	GTP deriv
+MMA=	YES	methyl mannose
+RNS=	YES
+BMH=	YES
+M7P=	YES
+STI=	YES	inhib??
+HGA=	YESAM	glutamine hydroxamate - unsure
+PYR=	YES
+TNE=	YES
+8HG=	YES
+DUT=	YES	UDP deriv
+MLT=	YES	malate
+4AA=	YES
+M2P=	YES
+SKM=	YES
+FCB=	YES
+BGT=	YES
+LPA=	YES
+DGT=	YES
+CO2=	YES
+F6R=	YES	fructose 6 phosphate
+MSS=	YES	unsure -
+UMP=	YES
+MFU=	YES
+DUR=	YES
+23D=	YES
+BG6=	YES
+VPR=	YES
+MAL=	YES	maltose
+NOS=	YES
+AIR=	YES
+DND=	YES	NAD deriv
+A3S=	YES
+G2F=	YES
+SHG=	YES
+
+#added by LJM
+SO4=	YES
+PO4=	YES
+IMD=	YES
+CL=	YES
+POP=	YES
+MN=	YES
+BR=	YES
