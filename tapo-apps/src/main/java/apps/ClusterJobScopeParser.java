@@ -1,7 +1,6 @@
 package apps;
 
 import org.cnrs.crbm.lib.classification.CATHParser;
-import org.cnrs.crbm.lib.classification.ScopeParser;
 import org.cnrs.crbm.lib.conf.Dir;
 import org.cnrs.crbm.lib.io.DataIO;
 import org.slf4j.Logger;

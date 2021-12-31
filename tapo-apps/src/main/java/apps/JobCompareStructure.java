@@ -1,7 +1,6 @@
 package apps;
 
 import org.biojava.nbio.structure.Atom;
-import org.biojava.nbio.structure.Structure;
 import org.biojava.nbio.structure.align.model.AFPChain;
 import org.cnrs.crbm.lib.conf.Dir;
 import org.cnrs.crbm.lib.io.DataIO;
@@ -9,7 +8,6 @@ import org.cnrs.crbm.lib.multalign.MutilAlign;
 import org.cnrs.crbm.lib.repeats.Fragement;
 import org.cnrs.crbm.lib.repeats.RepeatFinder;
 import org.cnrs.crbm.lib.utils.NumberFormatUtils;
-import org.cnrs.crbm.lib.utils.PdbTools;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 

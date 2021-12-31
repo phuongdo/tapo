@@ -1,6 +1,5 @@
 package org.cnrs.crbm.ml;
 
-import com.sun.javafx.collections.MappingChange;
 import net.sf.javaml.classification.Classifier;
 import net.sf.javaml.classification.KNearestNeighbors;
 import net.sf.javaml.classification.bayes.NaiveBayesClassifier;

@@ -1,7 +1,6 @@
 package demo;
 
 import org.cnrs.crbm.lib.io.DataIO;
-import org.cnrs.crbm.lib.io.Row;
 
 import java.util.List;
 

@@ -1,16 +1,12 @@
 package apps;
 
-import java.io.File;
-import java.math.RoundingMode;
-import java.util.List;
-
+import com.google.common.collect.Lists;
 import org.apache.commons.io.FileUtils;
 import org.cnrs.crbm.lib.conf.Dir;
 import org.cnrs.crbm.lib.io.DataIO;
-import org.cnrs.crbm.lib.io.Row;
 
-import com.google.common.collect.Lists;
-import com.google.common.math.IntMath;
+import java.io.File;
+import java.util.List;
 
 public class GenerateJobInput {
 

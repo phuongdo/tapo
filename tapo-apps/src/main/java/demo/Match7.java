@@ -17,7 +17,10 @@ package demo;
 //      java Match7
 
 import java.awt.*;
-import java.awt.event.*;
+import java.awt.event.ActionEvent;
+import java.awt.event.ActionListener;
+import java.awt.event.WindowAdapter;
+import java.awt.event.WindowEvent;
 
 
 // The abstract class of clusters or rooted trees

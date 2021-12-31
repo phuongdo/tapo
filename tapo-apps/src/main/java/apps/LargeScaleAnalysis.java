@@ -1,19 +1,9 @@
 package apps;
 
-import java.io.*;
-import java.util.List;
-import java.util.Set;
-
-import org.cnrs.crbm.lib.conf.Dir;
 import org.cnrs.crbm.lib.io.DataIO;
-import org.cnrs.crbm.lib.io.ProteinCSVReader;
-import org.cnrs.crbm.lib.io.ReadFasta;
-import org.cnrs.crbm.lib.io.Row;
 import org.cnrs.crbm.lib.repeats.CombineScore;
-import org.cnrs.crbm.lib.repeats.FinderMode;
-import org.cnrs.crbm.lib.repeats.RepeatFinder;
-import org.cnrs.crbm.lib.sadb.Sequence3D;
-import org.cnrs.crbm.lib.utils.ProgressBar;
+
+import java.util.List;
 
 public class LargeScaleAnalysis {
     public static void main(String[] args) throws Exception {

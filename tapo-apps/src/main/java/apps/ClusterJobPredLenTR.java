@@ -6,7 +6,6 @@ import org.cnrs.crbm.lib.io.ReadFasta;
 import org.cnrs.crbm.lib.io.TaPoFastaFormat;
 import org.cnrs.crbm.lib.predLen.PredLenMod;
 import org.cnrs.crbm.lib.repeats.RepeatRegion;
-
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 
