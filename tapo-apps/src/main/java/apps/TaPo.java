@@ -11,22 +11,15 @@ import org.slf4j.LoggerFactory;
  * Created by pdoviet on 10/10/2014.
  */
 public class TaPo {
-
-
     static Logger logger = LoggerFactory.getLogger(TaPo.class);
-
     public static void main(String[] args) {
-
-
         String pdbCode = "1bpo";
         String pdbChain = "A";
         final CommandLineParser cmdLineGnuParser = new GnuParser();
         final Options options = constructOptions();
         CommandLine commandLine;
         String outputFile = null;
-
         int nCore = 0;
-
         try {
             commandLine = cmdLineGnuParser.parse(options, args);
 
@@ -55,20 +48,23 @@ public class TaPo {
                         || outputFile == null)
                     throw new org.apache.commons.cli.ParseException(
                             "Parse Exception!!!");
-                RepeatFinder repeatFinder = new RepeatFinder(pdbCode, pdbChain, nCore);
-                repeatFinder.setMode(FinderMode.CONSOLE);
-//                System.out.println("starting...");
-                repeatFinder.findRepeat();
-
+                RepeatFinder repeatFinder;
+                if (commandLine.hasOption("f")) {
+                    String fileDir = commandLine.getOptionValue("f");
+                    repeatFinder = new RepeatFinder(fileDir, pdbCode, pdbChain, nCore);
+                    repeatFinder.setMode(FinderMode.CONSOLE);
+                } else {
+                    // load from PDF
+                    repeatFinder = new RepeatFinder(pdbCode, pdbChain, nCore);
+                    repeatFinder.setMode(FinderMode.CONSOLE);
+                    repeatFinder.findRepeat();
+                }
                 String output;
                 if (repeatFinder.isRepeat())
                     output = repeatFinder.getConsoleOutputDetails();
                 else
                     output = pdbCode + "_" + pdbChain + "\tNo-TRs";
-
                 DataIO.writeToFile(">" + pdbCode + "_" + pdbChain + "|" + repeatFinder.getTAPOScore() + "\n" + output, outputFile);
-
-
             }
 
         } catch (org.apache.commons.cli.ParseException e) {
@@ -78,15 +74,15 @@ public class TaPo {
             e.printStackTrace();
         }
 
-
     }
 
     private static Options constructOptions() {
         final Options options = new Options();
         options.addOption("help", false, "help")
                 .addOption("nCore", true, "number of cores you want to use. Default is 1 core")
-                .addOption("p", true, "protein code eg. 1bpo")
-                .addOption("c", true, "protein chain id eg. A")
+                .addOption("p", false, "protein code eg. 1bpo")
+                .addOption("c", false, "protein chain id eg. A")
+                .addOption("f", false, "PDF file format")
                 .addOption("o", true, "ouput file.");
         return options;
     }

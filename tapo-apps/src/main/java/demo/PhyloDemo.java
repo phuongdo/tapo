@@ -4,7 +4,6 @@ import org.forester.archaeopteryx.Archaeopteryx;
 import org.forester.phylogeny.Phylogeny;
 import org.forester.phylogeny.PhylogenyNode;
 import org.forester.phylogeny.data.Event;
-import org.forester.phylogeny.data.Sequence;
 import org.forester.phylogeny.data.Taxonomy;
 
 /**

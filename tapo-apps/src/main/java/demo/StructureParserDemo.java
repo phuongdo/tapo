@@ -6,7 +6,6 @@ import org.cnrs.crbm.lib.utils.NumberFormatUtils;
 import org.cnrs.crbm.lib.utils.PdbTools;
 
 import java.util.ArrayList;
-import java.util.Iterator;
 import java.util.List;
 
 /**

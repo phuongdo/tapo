@@ -4,22 +4,16 @@ package demo;
  * Created by pdoviet on 7/1/2015.
  */
 
-import msa.Msa;
 import org.biojava.nbio.alignment.Alignments;
-import org.biojava.nbio.alignment.template.AlignedSequence;
 import org.biojava.nbio.alignment.template.Profile;
 import org.biojava.nbio.core.exceptions.CompoundNotFoundException;
-import org.biojava.nbio.core.sequence.AccessionID;
 import org.biojava.nbio.core.sequence.ProteinSequence;
 import org.biojava.nbio.core.sequence.compound.AminoAcidCompound;
 import org.biojava.nbio.core.sequence.io.FastaReaderHelper;
-import org.biojava.nbio.core.sequence.template.Sequence;
-import org.biojava.nbio.core.util.ConcurrencyTools;
 import org.cnrs.crbm.lib.repeats.module.TMEvaluation;
 
 import java.net.URL;
 import java.util.ArrayList;
-import java.util.LinkedList;
 import java.util.List;
 
 public class Alignment {

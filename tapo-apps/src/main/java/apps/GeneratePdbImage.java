@@ -1,15 +1,15 @@
 package apps;
 
+import org.cnrs.crbm.lib.io.DataIO;
+import org.cnrs.crbm.lib.io.ProteinCSVReader;
+import org.cnrs.crbm.lib.io.Row;
+
 import java.io.FileOutputStream;
 import java.io.IOException;
 import java.io.InputStream;
 import java.io.OutputStream;
 import java.net.URL;
 import java.util.List;
-
-import org.cnrs.crbm.lib.io.DataIO;
-import org.cnrs.crbm.lib.io.ProteinCSVReader;
-import org.cnrs.crbm.lib.io.Row;
 
 public class GeneratePdbImage {
 	public static void main(String[] args) throws Exception {

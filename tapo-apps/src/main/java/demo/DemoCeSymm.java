@@ -5,17 +5,12 @@ import org.biojava.nbio.structure.Atom;
 import org.biojava.nbio.structure.Structure;
 import org.biojava.nbio.structure.StructureTools;
 import org.biojava.nbio.structure.align.multiple.MultipleAlignment;
-import org.biojava.nbio.structure.align.multiple.util.MultipleAlignmentWriter;
-import org.biojava.nbio.structure.symmetry.core.QuatSymmetryResults;
 import org.biojava.nbio.structure.symmetry.gui.SymmetryDisplay;
 import org.biojava.nbio.structure.symmetry.internal.CESymmParameters;
 import org.biojava.nbio.structure.symmetry.internal.CeSymm;
 import org.biojava.nbio.structure.symmetry.internal.SymmetryAxes;
 import org.biojava.nbio.structure.symmetry.utils.SymmetryTools;
-import org.cnrs.crbm.lib.multalign.MSAWriter;
 import org.cnrs.crbm.lib.utils.PdbTools;
-
-import java.util.List;
 
 
 /**

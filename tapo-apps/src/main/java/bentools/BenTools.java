@@ -4,7 +4,6 @@ import org.biojava.nbio.structure.Atom;
 import org.cnrs.crbm.lib.io.DataIO;
 import org.cnrs.crbm.lib.raphael.Raphael;
 import org.cnrs.crbm.lib.repeats.RepeatFinder;
-import org.cnrs.crbm.lib.trsfinder.Repeat;
 import org.cnrs.crbm.lib.utils.NumberFormatUtils;
 
 import java.util.List;

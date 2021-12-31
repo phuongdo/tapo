@@ -4,12 +4,8 @@ import org.biojava.nbio.structure.Chain;
 import org.biojava.nbio.structure.Structure;
 import org.biojava.nbio.structure.io.FileParsingParameters;
 import org.biojava.nbio.structure.io.PDBFileReader;
-import org.fusesource.jansi.AnsiConsole;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
-
-import static org.fusesource.jansi.Ansi.*;
-import static org.fusesource.jansi.Ansi.Color.*;
 
 // Import log4j classes.
 public class MyApp {
