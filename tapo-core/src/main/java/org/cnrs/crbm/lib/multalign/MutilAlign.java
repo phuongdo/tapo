@@ -15,9 +15,6 @@ import org.biojava.nbio.structure.align.StructureAlignmentFactory;
 import org.biojava.nbio.structure.align.ce.CeMain;
 import org.biojava.nbio.structure.align.ce.CeParameters;
 import org.biojava.nbio.structure.align.ce.ConfigStrucAligParams;
-import org.biojava.nbio.structure.align.fatcat.FatCatFlexible;
-import org.biojava.nbio.structure.align.fatcat.FatCatRigid;
-import org.biojava.nbio.structure.align.fatcat.calc.FatCatParameters;
 import org.biojava.nbio.structure.align.model.AFPChain;
 import org.biojava.nbio.structure.align.multiple.MultipleAlignment;
 import org.biojava.nbio.structure.align.multiple.mc.MultipleMcMain;
@@ -27,7 +24,6 @@ import org.biojava.nbio.structure.jama.Matrix;
 import org.cnrs.crbm.lib.conf.Dir;
 import org.cnrs.crbm.lib.io.DataIO;
 import org.cnrs.crbm.lib.io.ReadFasta;
-
 import org.cnrs.crbm.lib.repeats.Fragement;
 import org.cnrs.crbm.lib.repeats.RepeatFinder;
 import org.cnrs.crbm.lib.trsfinder.Features;

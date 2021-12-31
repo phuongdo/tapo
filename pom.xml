@@ -7,7 +7,7 @@
     <groupId>tapo</groupId>
     <artifactId>tapo</artifactId>
     <packaging>pom</packaging>
-    <version>1.1.2-dev</version>
+    <version>1.1.3</version>
     <modules>
         <module>tapo-core</module>
         <module>tapo-classification</module>
@@ -17,14 +17,16 @@
     </modules>
 
     <properties>
+        <maven.compiler.source>1.8</maven.compiler.source>
+        <maven.compiler.target>1.8</maven.compiler.target>
         <main.basedir>${project.basedir}</main.basedir>
         <jettyVersion>7.2.0.v20101020</jettyVersion>
         <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
         <build.dist>${project.basedir}/dependencies-dev</build.dist>
         <src.dir>src/main/java</src.dir>
         <biojava.version>4.1.1-SNAPSHOT</biojava.version>
-        <!--        <slf4j.version>1.7.12</slf4j.version>-->
-        <!--        <log4j.version>2.3</log4j.version>-->
+        <slf4j.version>1.7.12</slf4j.version>
+        <log4j.version>2.3</log4j.version>
     </properties>
 
 
@@ -33,29 +35,87 @@
             <groupId>org.biojava</groupId>
             <artifactId>biojava-core</artifactId>
             <version>${biojava.version}</version>
+            <scope>system</scope>
+            <systemPath>${project.basedir}/lib/biojava-core-4.1.1-SNAPSHOT.jar</systemPath>
+            <exclusions>
+                <exclusion>
+                    <groupId>javaws</groupId>
+                    <artifactId>javaws</artifactId>
+                </exclusion>
+            </exclusions>
         </dependency>
         <!-- other biojava jars as needed -->
         <dependency>
             <groupId>org.biojava</groupId>
             <artifactId>biojava-alignment</artifactId>
             <version>${biojava.version}</version>
+            <scope>system</scope>
+            <systemPath>${project.basedir}/lib/biojava-alignment-4.1.1-SNAPSHOT.jar</systemPath>
+
+            <exclusions>
+                <exclusion>
+                    <groupId>javaws</groupId>
+                    <artifactId>javaws</artifactId>
+                </exclusion>
+            </exclusions>
         </dependency>
 
         <dependency>
             <groupId>org.biojava</groupId>
             <artifactId>biojava-structure</artifactId>
             <version>${biojava.version}</version>
+            <scope>system</scope>
+            <systemPath>${project.basedir}/lib/biojava-structure-4.1.1-SNAPSHOT.jar</systemPath>
+
+            <exclusions>
+                <exclusion>
+                    <groupId>javaws</groupId>
+                    <artifactId>javaws</artifactId>
+                </exclusion>
+            </exclusions>
         </dependency>
         <dependency>
             <groupId>org.biojava</groupId>
             <artifactId>biojava-structure-gui</artifactId>
             <version>${biojava.version}</version>
+            <scope>system</scope>
+            <systemPath>${project.basedir}/lib/biojava-structure-gui-4.1.1-SNAPSHOT.jar</systemPath>
+
+            <exclusions>
+                <exclusion>
+                    <groupId>javaws</groupId>
+                    <artifactId>javaws</artifactId>
+                </exclusion>
+            </exclusions>
         </dependency>
         <dependency>
             <groupId>org.biojava</groupId>
             <artifactId>biojava-ws</artifactId>
             <version>${biojava.version}</version>
+            <scope>system</scope>
+            <systemPath>${project.basedir}/lib/biojava-ws-4.1.1-SNAPSHOT.jar</systemPath>
+            <exclusions>
+                <exclusion>
+                    <groupId>javaws</groupId>
+                    <artifactId>javaws</artifactId>
+                </exclusion>
+            </exclusions>
         </dependency>
+
+        <dependency>
+            <groupId>org.biojava</groupId>
+            <artifactId>biojava-phylo</artifactId>
+            <version>${biojava.version}</version>
+            <scope>system</scope>
+            <systemPath>${project.basedir}/lib/biojava-phylo-4.1.1-SNAPSHOT.jar</systemPath>
+            <exclusions>
+                <exclusion>
+                    <groupId>javaws</groupId>
+                    <artifactId>javaws</artifactId>
+                </exclusion>
+            </exclusions>
+        </dependency>
+
 
         <dependency>
             <groupId>commons-cli</groupId>
@@ -129,25 +189,32 @@
             <systemPath>${project.basedir}/lib/forester-1.0.jar</systemPath>
         </dependency>
 
+        <!--        <dependency>-->
+        <!--            <groupId>org.biojava.thirdparty</groupId>-->
+        <!--            <artifactId>forester</artifactId>-->
+        <!--            <version>1.005</version>-->
+        <!--        </dependency>-->
         <dependency>
-            <groupId>org.biojava.thirdparty</groupId>
-            <artifactId>forester</artifactId>
-            <version>1.005</version>
+            <groupId>javaws</groupId>
+            <artifactId>javaws</artifactId>
+            <version>1.0</version>
+            <scope>system</scope>
+            <systemPath>${project.basedir}/lib/javaws-1.0.jar</systemPath>
         </dependency>
 
-        <!--<dependency>-->
-        <!--<groupId>gui.ava</groupId>-->
-        <!--<artifactId>WebVector</artifactId>-->
-        <!--<version>3.3</version>-->
-        <!--<scope>system</scope>-->
-        <!--<systemPath>${project.basedir}/lib/WebVector-3.3.jar</systemPath>-->
-        <!--<exclusions>-->
-        <!--<exclusion>-->
-        <!--<groupId>org.slf4j</groupId>-->
-        <!--<artifactId>slf4j-log4j12</artifactId>-->
-        <!--</exclusion>-->
-        <!--</exclusions>-->
-        <!--</dependency>-->
+        <!--        <dependency>-->
+        <!--            <groupId>gui.ava</groupId>-->
+        <!--            <artifactId>WebVector</artifactId>-->
+        <!--            <version>3.3</version>-->
+        <!--            <scope>system</scope>-->
+        <!--            <systemPath>${project.basedir}/lib/WebVector-3.3.jar</systemPath>-->
+        <!--            <exclusions>-->
+        <!--                <exclusion>-->
+        <!--                    <groupId>org.slf4j</groupId>-->
+        <!--                    <artifactId>slf4j-log4j12</artifactId>-->
+        <!--                </exclusion>-->
+        <!--            </exclusions>-->
+        <!--        </dependency>-->
 
         <dependency>
             <groupId>net.sf.opencsv</groupId>
@@ -171,7 +238,6 @@
             <artifactId>mysql-connector-java</artifactId>
             <version>5.1.31</version>
         </dependency>
-
 
         <dependency>
             <groupId>org.sonatype.jline</groupId>
@@ -200,92 +266,91 @@
             <version>1.3</version>
         </dependency>
 
-        <!--        <dependency>-->
-        <!--            <groupId>org.slf4j</groupId>-->
-        <!--            <artifactId>jcl-over-slf4j</artifactId>-->
-        <!--            <version>1.7.5</version>-->
-        <!--        </dependency>-->
-        <!--Redirect Java Util Logging to Slf4J -->
-        <!--        <dependency>-->
-        <!--            <groupId>org.slf4j</groupId>-->
-        <!--            <artifactId>slf4j-api</artifactId>-->
-        <!--            <version>${slf4j.version}</version>-->
-        <!--        </dependency>-->
-        <!--        &lt;!&ndash; binding for log4j 2 &ndash;&gt;-->
-        <!--        <dependency>-->
-        <!--            <groupId>org.apache.logging.log4j</groupId>-->
-        <!--            <artifactId>log4j-slf4j-impl</artifactId>-->
-        <!--            <version>${log4j.version}</version>-->
-        <!--            &lt;!&ndash; runtime scope includes the test scope as well &ndash;&gt;-->
-        <!--            &lt;!&ndash;<scope>runtime</scope>&ndash;&gt;-->
-        <!--        </dependency>-->
-        <!--        &lt;!&ndash; Log4j API and Core implementation required for binding &ndash;&gt;-->
-        <!--        <dependency>-->
-        <!--            <groupId>org.apache.logging.log4j</groupId>-->
-        <!--            <artifactId>log4j-api</artifactId>-->
-        <!--            <version>${log4j.version}</version>-->
-        <!--            &lt;!&ndash; runtime scope includes the test scope as well &ndash;&gt;-->
-        <!--            <scope>runtime</scope>-->
-        <!--        </dependency>-->
-        <!--        <dependency>-->
-        <!--            <groupId>org.apache.logging.log4j</groupId>-->
-        <!--            <artifactId>log4j-core</artifactId>-->
-        <!--            <version>${log4j.version}</version>-->
-        <!--            &lt;!&ndash; runtime scope includes the test scope as well &ndash;&gt;-->
-        <!--            &lt;!&ndash;<scope>runtime</scope>&ndash;&gt;-->
+        <dependency>
+            <groupId>org.slf4j</groupId>
+            <artifactId>jcl-over-slf4j</artifactId>
+            <version>1.7.5</version>
+        </dependency>
+        <!--        Redirect Java Util Logging to Slf4J-->
+        <dependency>
+            <groupId>org.slf4j</groupId>
+            <artifactId>slf4j-api</artifactId>
+            <version>${slf4j.version}</version>
+        </dependency>
+        <!-- binding for log4j 2 -->
+        <dependency>
+            <groupId>org.apache.logging.log4j</groupId>
+            <artifactId>log4j-slf4j-impl</artifactId>
+            <version>${log4j.version}</version>
+            <!-- runtime scope includes the test scope as well -->
+            <!--<scope>runtime</scope>-->
+        </dependency>
+        <!-- Log4j API and Core implementation required for binding -->
+        <dependency>
+            <groupId>org.apache.logging.log4j</groupId>
+            <artifactId>log4j-api</artifactId>
+            <version>${log4j.version}</version>
+            <!-- runtime scope includes the test scope as well -->
+            <scope>runtime</scope>
+        </dependency>
+        <dependency>
+            <groupId>org.apache.logging.log4j</groupId>
+            <artifactId>log4j-core</artifactId>
+            <version>${log4j.version}</version>
+            <!-- runtime scope includes the test scope as well -->
+            <!--<scope>runtime</scope>-->
 
-        <!--        </dependency>-->
+        </dependency>
 
     </dependencies>
 
     <repositories>
+<!--        <repository>-->
+<!--            <id>maven-restlet</id>-->
+<!--            <name>Public online Restlet repository</name>-->
+<!--            <url>http://maven.restlet.org</url>-->
+<!--        </repository>-->
+<!--        <repository>-->
+<!--            <id>central</id>-->
+<!--            <name>Maven Repository Switchboard</name>-->
+<!--            <layout>default</layout>-->
+<!--            <url>https://repo1.maven.org/maven2</url>-->
+<!--            <snapshots>-->
+<!--                <enabled>false</enabled>-->
+<!--            </snapshots>-->
+<!--        </repository>-->
+<!--        <repository>-->
+<!--            <id>maven2-repository.dev.java.net</id>-->
+<!--            <name>Java.net Maven 2 Repository</name>-->
+<!--            <url>https://download.java.net/maven/2</url>-->
+<!--        </repository>-->
+<!--        <repository>-->
+<!--            <id>maven-repository.dev.java.net</id>-->
+<!--            <name>Java.net Maven 1 Repository (legacy)</name>-->
+<!--            <url>http://download.java.net/maven/1</url>-->
+<!--        </repository>-->
 
-        <repository>
-            <id>maven-restlet</id>
-            <name>Public online Restlet repository</name>
-            <url>http://maven.restlet.org</url>
-        </repository>
-        <repository>
-            <id>central</id>
-            <name>Maven Repository Switchboard</name>
-            <layout>default</layout>
-            <url>http://repo1.maven.org/maven2</url>
-            <snapshots>
-                <enabled>false</enabled>
-            </snapshots>
-        </repository>
-        <repository>
-            <id>maven2-repository.dev.java.net</id>
-            <name>Java.net Maven 2 Repository</name>
-            <url>http://download.java.net/maven/2</url>
-        </repository>
-        <repository>
-            <id>maven-repository.dev.java.net</id>
-            <name>Java.net Maven 1 Repository (legacy)</name>
-            <url>http://download.java.net/maven/1</url>
-        </repository>
-
-        <repository>
-            <id>biojava-maven-repo</id>
-            <name>BioJava repository</name>
-            <url>http://www.biojava.org/download/maven/</url>
-            <snapshots>
-                <enabled>true</enabled>
-            </snapshots>
-            <releases>
-                <enabled>true</enabled>
-            </releases>
-        </repository>
-        <repository>
-            <id>oss.sonatype.org-snapshot</id>
-            <url>http://oss.sonatype.org/content/repositories/snapshots</url>
-            <releases>
-                <enabled>false</enabled>
-            </releases>
-            <snapshots>
-                <enabled>true</enabled>
-            </snapshots>
-        </repository>
+<!--        <repository>-->
+<!--            <id>biojava-maven-repo</id>-->
+<!--            <name>BioJava repository</name>-->
+<!--            <url>http://www.biojava.org/download/maven/</url>-->
+<!--            <snapshots>-->
+<!--                <enabled>true</enabled>-->
+<!--            </snapshots>-->
+<!--            <releases>-->
+<!--                <enabled>true</enabled>-->
+<!--            </releases>-->
+<!--        </repository>-->
+<!--        <repository>-->
+<!--            <id>oss.sonatype.org-snapshot</id>-->
+<!--            <url>http://oss.sonatype.org/content/repositories/snapshots</url>-->
+<!--            <releases>-->
+<!--                <enabled>false</enabled>-->
+<!--            </releases>-->
+<!--            <snapshots>-->
+<!--                <enabled>true</enabled>-->
+<!--            </snapshots>-->
+<!--        </repository>-->
 
 
     </repositories>
