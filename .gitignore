@@ -1,0 +1,6 @@
+/target/
+/.idea/
+/tapo-classification/target/
+/tapo-core/target/
+/tapo-ws/target/
+/tapo-apps/target/
