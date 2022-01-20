@@ -1,0 +1,104 @@
+FROM pdoviet/tapo:latest
+RUN
+ADD file:57743b1a50a24401681d6a46766c029c01bbe1926e01bf43c72fa37b53bfbda7 in /
+RUN /bin/sh -c echo '#!/bin/sh' > /usr/sbin/policy-rc.d  \
+    && echo 'exit 101' >> /usr/sbin/policy-rc.d  \
+    && chmod +x /usr/sbin/policy-rc.d   \
+    && dpkg-divert --local --rename --add /sbin/initctl  \
+    && cp -a /usr/sbin/policy-rc.d /sbin/initctl  \
+    && sed -i 's/^exit.*/exit 0/' /sbin/initctl   \
+    && echo 'force-unsafe-io' > /etc/dpkg/dpkg.cfg.d/docker-apt-speedup   \
+    && echo 'DPkg::Post-Invoke { "rm -f /var/cache/apt/archives/*.deb /var/cache/apt/archives/partial/*.deb /var/cache/apt/*.bin || true"; };' > /etc/apt/apt.conf.d/docker-clean  \
+    && echo 'APT::Update::Post-Invoke { "rm -f /var/cache/apt/archives/*.deb /var/cache/apt/archives/partial/*.deb /var/cache/apt/*.bin || true"; };' >> /etc/apt/apt.conf.d/docker-clean  \
+    && echo 'Dir::Cache::pkgcache ""; Dir::Cache::srcpkgcache "";' >> /etc/apt/apt.conf.d/docker-clean   \
+    && echo 'Acquire::Languages "none";' > /etc/apt/apt.conf.d/docker-no-languages   \
+    && echo 'Acquire::GzipIndexes "true"; Acquire::CompressionTypes::Order:: "gz";' > /etc/apt/apt.conf.d/docker-gzip-indexes
+RUN /bin/sh -c rm -rf /var/lib/apt/lists/*
+RUN /bin/sh -c sed -i 's/^#\s*\(deb.*universe\)$/\1/g' /etc/apt/sources.list
+RUN /bin/sh -c apt-get update \
+    && apt-get dist-upgrade -y \
+    && rm -rf /var/lib/apt/lists/*
+CMD [/bin/bash]
+MAINTAINER Phusion <info@phusion.nl>
+ENV HOME=/root
+RUN /bin/sh -c mkdir /build
+ADD dir:ea71bd5cd0a9da98911caef3e81735cbc9cc80e67414fe16fe916e84c3f4045d in /build
+RUN /bin/sh -c /build/prepare.sh \
+    &&  /build/system_services.sh \
+    &&  /build/utilities.sh \
+    &&  /build/cleanup.sh
+CMD [/sbin/my_init]
+MAINTAINER Robert Syme <rbosyme@gmail.com>
+EXPOSE 6444/tcp
+EXPOSE 6445/tcp
+EXPOSE 6446/tcp
+USER [root]
+ENV HOME=/root
+RUN /bin/sh -c /etc/my_init.d/00_regen_ssh_host_keys.sh
+RUN /bin/sh -c echo "Package: xserver-xorg*\nPin: release *\nPin-Priority: -1" >> /etc/apt/preferences
+RUN /bin/sh -c echo "Package: unity*\nPin: release *\nPin-Priority: -1" >> /etc/apt/preferences
+RUN /bin/sh -c echo "Package: gnome*\nPin: release *\nPin-Priority: -1" >> /etc/apt/preferences
+RUN /bin/sh -c sed -i "s/^\%sudo\tALL=(ALL:ALL)\sALL/%sudo ALL=(ALL) NOPASSWD:ALL/" /etc/sudoers
+RUN /bin/sh -c apt-get update -y
+RUN /bin/sh -c apt-get upgrade -y
+RUN /bin/sh -c apt-get install -y wget darcs git mercurial tcsh build-essential automake autoconf openssl libssl-dev munge libmunge2 libmunge-dev libjemalloc1 libjemalloc-dev db5.3-util libdb-dev libncurses5 libncurses5-dev libpam0g libpam0g-dev libpacklib-lesstif1-dev libmotif-dev libxmu-dev libxpm-dev hwloc libhwloc-dev openjdk-7-jre openjdk-7-jdk ant ant-optional javacc junit libswing-layout-java libxft2 libxft-dev libreadline-dev man gawk
+ADD file:d316ba53a85855528d2ccb990e457b5de393e69952393129a3158c906483046a in /root/izpack_auto_install.xml
+ADD file:a674c263bc3e4cde793ece2ae75e050f5cbe3766f22636e59e6aed5cf8843b14 in /root/sge_auto_install.conf
+ADD file:046b3a5113704ff345bbe15439e8c6153b1e2b585b7bab30153565a84d3e5c47 in /etc/my_init.d/01_docker_sge_init.sh
+ADD file:3528ee839513c86dab52891cb31f7f1af61dbdf4784564995d3506b4f064f653 in /root/sge_hostgrp.conf
+ADD file:3528ee839513c86dab52891cb31f7f1af61dbdf4784564995d3506b4f064f653 in /root/sge_exec_host.conf
+ADD file:4638c8f97fbee2eb6a7c8a15aeacf431bcbca6248ef7be19897a5f357a8c0ab0 in /root/sge_queue.conf
+RUN /bin/sh -c chmod ug+x /etc/my_init.d/01_docker_sge_init.sh
+WORKDIR /root
+RUN /bin/sh -c wget -c http://download.jboss.org/jbosstools/updates/requirements/izpack/4.3.5/IzPack-install-4.3.5.jar
+RUN /bin/sh -c wget -c http://www.mirrorservice.org/sites/archive.ubuntu.com/ubuntu/pool/main/libz/libzip/libzip1_0.9-3_amd64.deb
+RUN /bin/sh -c wget -c http://www.mirrorservice.org/sites/archive.ubuntu.com/ubuntu/pool/main/libz/libzip/libzip-dev_0.9-3_amd64.deb
+RUN /bin/sh -c wget -c http://archive.cloudera.com/one-click-install/lucid/cdh3-repository_1.0_all.deb
+RUN /bin/sh -c java -jar IzPack-install-4.3.5.jar ~/izpack_auto_install.xml
+ENV PATH=/usr/local/izpack/bin:/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin
+RUN /bin/sh -c echo export PATH=/usr/local/izpack/bin:$PATH >> /etc/bashrc
+RUN /bin/sh -c dpkg -i libzip1_0.9-3_amd64.deb
+RUN /bin/sh -c dpkg -i libzip-dev_0.9-3_amd64.deb
+RUN /bin/sh -c dpkg -i cdh3-repository_1.0_all.deb
+RUN /bin/sh -c apt-get update \
+    && apt-get -y install hadoop-0.20 hadoop-0.20-native
+RUN /bin/sh -c wget -c http://arc.liv.ac.uk/downloads/SGE/releases/8.1.8/sge-8.1.8.tar.gz
+RUN /bin/sh -c tar -zxvf sge-8.1.8.tar.gz
+WORKDIR /root/sge-8.1.8/source
+ENV SGE_ROOT=/opt/sge
+ENV SGE_CELL=default
+RUN /bin/sh -c echo export SGE_ROOT=/opt/sge >> /etc/bashrc
+RUN /bin/sh -c echo export SGE_CELL=default >> /etc/bashrc
+RUN /bin/sh -c ln -s $SGE_ROOT/$SGE_CELL/common/settings.sh /etc/profile.d/sge_settings.sh
+RUN /bin/sh -c mkdir /opt/sge
+RUN /bin/sh -c useradd -r -m -U -d /home/sgeadmin -s /bin/bash -c "Docker SGE Admin" sgeadmin
+RUN /bin/sh -c usermod -a -G sudo sgeadmin
+RUN /bin/sh -c sh scripts/bootstrap.sh \
+    && ./aimk \
+    && ./aimk -man
+RUN /bin/sh -c echo Y | ./scripts/distinst -local -allall -libs -noexit
+WORKDIR /opt/sge
+RUN /bin/sh -c ./inst_sge -m -x -s -auto ~/sge_auto_install.conf \
+    && /etc/my_init.d/01_docker_sge_init.sh \
+    && sed -i "s/HOSTNAME/`hostname`/" $HOME/sge_exec_host.conf \
+    && sed -i "s/HOSTNAME/`hostname`/" $HOME/sge_hostgrp.conf \
+    && /opt/sge/bin/lx-amd64/qconf -au sgeadmin arusers \
+    && /opt/sge/bin/lx-amd64/qconf -Me $HOME/sge_exec_host.conf \
+    && /opt/sge/bin/lx-amd64/qconf -Aq $HOME/sge_queue.conf
+ENV PATH=/opt/sge/bin:/opt/sge/bin/lx-amd64/:/opt/sge/utilbin/lx-amd64:/usr/local/izpack/bin:/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin
+RUN /bin/sh -c echo export PATH=/opt/sge/bin:/opt/sge/bin/lx-amd64/:/opt/sge/utilbin/lx-amd64:$PATH >> /etc/bashrc
+WORKDIR /root
+RUN /bin/sh -c rm *.deb
+RUN /bin/sh -c rm *.jar
+RUN /bin/sh -c rm *.tar.gz
+RUN /bin/sh -c rm -rf sge-8.1.8
+RUN /bin/sh -c apt-get clean \
+    && rm -rf /var/lib/apt/lists/* /tmp/* /var/tmp/*
+ENTRYPOINT &{["/sbin/my_init" "--"]}
+CMD ["/bin/bash"]
+RUN login -f sgeadmin /bin/bash
+RUN login -f sgeadmin /bin/bash
+RUN login -f sgeadmin /bin/bash
+RUN login -f sgeadmin /bin/bash
+RUN login -f sgeadmin /bin/bash
+RUN login -f sgeadmin /bin/bash

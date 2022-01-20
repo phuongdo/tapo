@@ -28,7 +28,6 @@ public class TaPo {
             } else {
                 if (commandLine.hasOption("o")) {
                     outputFile = commandLine.getOptionValue("o");
-
                 }
                 if (commandLine.hasOption("nCore")) {
                     nCore = Integer.parseInt(commandLine
@@ -37,13 +36,16 @@ public class TaPo {
                 }
                 if (commandLine.hasOption("p")) {
                     pdbCode = commandLine.getOptionValue("p");
-                    ;
-
+                    System.out.println(pdbCode);
                 }
                 if (commandLine.hasOption("c")) {
                     pdbChain = commandLine.getOptionValue("c");
+                    System.out.println(commandLine.getOptionValue("c"));
                 }
 
+                if (commandLine.hasOption("f")) {
+                    System.out.println(commandLine.getOptionValue("c"));
+                }
                 if (nCore == 0
                         || outputFile == null)
                     throw new org.apache.commons.cli.ParseException(
@@ -51,10 +53,12 @@ public class TaPo {
                 RepeatFinder repeatFinder;
                 if (commandLine.hasOption("f")) {
                     String fileDir = commandLine.getOptionValue("f");
+//                    System.out.println("Loading file " + fileDir);
                     repeatFinder = new RepeatFinder(fileDir, pdbCode, pdbChain, nCore);
                     repeatFinder.setMode(FinderMode.CONSOLE);
                 } else {
                     // load from PDF
+//                    System.out.println("Loal PDB Bank");
                     repeatFinder = new RepeatFinder(pdbCode, pdbChain, nCore);
                     repeatFinder.setMode(FinderMode.CONSOLE);
                     repeatFinder.findRepeat();
@@ -80,9 +84,9 @@ public class TaPo {
         final Options options = new Options();
         options.addOption("help", false, "help")
                 .addOption("nCore", true, "number of cores you want to use. Default is 1 core")
-                .addOption("p", false, "protein code eg. 1bpo")
-                .addOption("c", false, "protein chain id eg. A")
-                .addOption("f", false, "PDF file format")
+                .addOption("p", true, "protein code eg. 1bpo")
+                .addOption("c", true, "protein chain id eg. A")
+                .addOption("f", true, "PDF file format")
                 .addOption("o", true, "ouput file.");
         return options;
     }

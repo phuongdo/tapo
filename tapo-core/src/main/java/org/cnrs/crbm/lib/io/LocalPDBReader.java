@@ -22,7 +22,11 @@ public class LocalPDBReader {
     public static void main(String[] args) {
         LocalPDBReader loader = new LocalPDBReader();
 //        Structure s = loader.getPdb("4hhb");
-        Structure s = loader.loadStructureFromFile("input/rosmann_model.pdb");
+        Structure s = loader.loadStructureFromFile("input/AF-Q9NQZ3-F1-model_v2.pdb");
+//        Structure s = loader.loadStructureFromFile("input/1ib2.pdb");
+
+//        Structure s = loader.loadStructureFromFile("input/rosmann_model.pdb");
+
         for (Chain c : s.getChains()) {
 
             System.out.println(">" + c.getChainID());

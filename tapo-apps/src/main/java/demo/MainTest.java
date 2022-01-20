@@ -335,6 +335,8 @@ public class MainTest implements Runnable {
 		}
 	}
 
+
+
 	public void test1() throws StructureException {
 
 		Structure structure = PdbTools.getStructureFromFile("input/FAKE_A.pdb");

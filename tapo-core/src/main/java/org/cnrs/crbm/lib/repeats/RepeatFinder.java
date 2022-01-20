@@ -181,7 +181,7 @@ public class RepeatFinder {
         try {
             this.initial();
         } catch (Exception ex) {
-            // ex.printStackTrace();
+             ex.printStackTrace();
         }
     }
 
@@ -210,7 +210,6 @@ public class RepeatFinder {
         // get information of DSSP
         // version 1.0.2 . support get structure directly from local install of
         // PDB database.
-
 
         Structure structure = PdbTools.getStructureFromFile(pdbfileDir);
 
